@@ -1,7 +1,9 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('path');
+const iconPath = path.join(__dirname, "build", "icon.png");
 
 function createWindow () {
-    win = new BrowserWindow({fullscreen: true});
+    win = new BrowserWindow({fullscreen: true, icon: iconPath});
     win.loadURL('http://youtube.com/tv',
       {userAgent: 'Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1'});
  
