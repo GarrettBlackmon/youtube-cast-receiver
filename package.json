@@ -1,18 +1,14 @@
 {
   "name": "youtube-cast-receiver",
   "version": "0.1.0",
-  "author": "Garrett Blackmon",
+  "author": "Garrett Blackmon <garrett@blackmon.dev>",
   "description": "Grants access to youtube.com/tv normally reserved for use with smart TVs",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
-  },
-  "build": {
-    "files": [
-      "build/*"
-    ]
+    "make": "electron-forge make",
+    "make-linux": "electron-forge make --platform linux --targets deb"
   },
   "keywords": [],
   "license": "ISC",
@@ -29,7 +25,9 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./assets/icon"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -45,7 +43,10 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
+          "config": {
+            "name": "Youtube Cast Receiver",
+            "icon": "./build/icon.png"
+          }
         },
         {
           "name": "@electron-forge/maker-rpm",
