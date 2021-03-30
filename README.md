@@ -3,7 +3,7 @@
 
 ![](https://img.shields.io/badge/platform-linux--64%20%7C%20osx--64%20%7C%20win--64-green)
 ![](https://img.shields.io/badge/node%40latest-%3E%3D%206.0.0-green)
-![](https://img.shields.io/badge/license-MIT-green)
+![](https://img.shields.io/badge/license-GPL-green)
 
 ![](https://github.com/GarrettBlackmon/youtube-cast-receiver/blob/master/assets/icon.png?raw=true)
 
@@ -81,7 +81,7 @@ npm run make
 
 Garrett Blackmon – [@GarrettBlackmon](https://twitter.com/garrettblackmon) – garrett@blackmon.dev
 
-Distributed under the MIT license. See ``LICENSE`` for more information.
+Distributed under the GPL license. See ``LICENSE`` for more information.
 
 ## Contributing
 
