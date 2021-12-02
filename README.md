@@ -55,8 +55,21 @@ Grab the approprite binary for your system from the [releases](https://github.co
 
 
 
+## Release History
 
-## Contribution
+* 0.1.0
+    * Work in progress - compiled for linux/macOS
+
+
+## Contributing
+
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+## Development
 
 To run the project locally with npm:
 
@@ -72,21 +85,8 @@ To build:
 npm run make
 ```
 
-## Release History
-
-* 0.1.0
-    * Work in progress
-
 ## Meta
 
 Garrett Blackmon – [@GarrettBlackmon](https://twitter.com/garrettblackmon) – garrett@blackmon.dev
 
 Distributed under the GPL license. See ``LICENSE`` for more information.
-
-## Contributing
-
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
