@@ -8,13 +8,15 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "make-linux": "electron-forge make --platform linux --targets deb"
+    "make-linux": "electron-forge make --platform linux --targets deb",
+    "make-osx": "electron-forge make --platform darwin"
   },
   "keywords": [],
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.61",
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
@@ -36,17 +38,20 @@
           }
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
           "name": "@electron-forge/maker-deb",
           "config": {
             "name": "Youtube Cast Receiver",
             "icon": "./build/icon.png"
           }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "name": "Youtube Cast Receiver"
+          },
+          "platforms": [
+            "darwin"
+          ]
         },
         {
           "name": "@electron-forge/maker-rpm",
