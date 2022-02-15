@@ -7,7 +7,7 @@
  "scripts": {
   "start": "electron-forge start",
   "postinstall": "electron-builder install-app-deps",
-  "build": "electron-builder --mac --windows --linux",
+  "build-local": "electron-builder --mac --windows --linux",
   "release": "electron-builder --mac --windows --linux --publish always"
  },
  "keywords": [],
