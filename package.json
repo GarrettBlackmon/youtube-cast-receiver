@@ -13,7 +13,7 @@
  "keywords": [],
  "license": "ISC",
  "devDependencies": {
-  "electron-builder": "20.39.0",
+  "electron-builder": "21.2.0",
   "@electron-forge/cli": "^6.0.0-beta.54",
   "@electron-forge/maker-deb": "^6.0.0-beta.54",
   "@electron-forge/maker-dmg": "^6.0.0-beta.61",
