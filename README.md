@@ -7,9 +7,9 @@
 
 ![](https://github.com/GarrettBlackmon/youtube-cast-receiver/blob/master/assets/icon.png?raw=true)
 
-Youtube Cast Receiver (YCR) was built to allow you to cast Youtube videos, shows, and moveis from your phone directly to your computer. This is very useful while traveling with a laptop and hdmi cable. Leave the chromecast at home!
+Youtube Cast Receiver (YCR) was built to allow you to cast Youtube content from your phone directly to your computer. This is very useful while traveling with a laptop and hdmi cable. Leave the chromecast at home!
 
-This is acheived by spoofing the useragent to make your connection appear to come from a smart TV, allowing you to access [youtube.com/tv](https://youtube.com/tv). This app launches in fullscreen mode to give you an immersive and native feeling casting experience.
+This is achieved by spoofing the useragent to make your connection appear to come from a smart TV, allowing you to access [youtube.com/tv](https://youtube.com/tv). This app launches in fullscreen mode to give you an immersive and native feeling casting experience.
 
 ## Installation
 
@@ -58,7 +58,13 @@ Grab the approprite binary for your system from the [releases](https://github.co
 ## Release History
 
 * 0.1.0
-    * Work in progress - compiled for linux/macOS
+    * Work in progress - compiled for Linux/MacOS
+* 1.0.0
+    * Official release - compiled for Windows/MacOS/Linux
+* 1.0.1
+    * Bugfix - removed menubar on windows distribution
+
+
 
 
 ## Contributing
@@ -89,4 +95,4 @@ npm run make
 
 Garrett Blackmon – [@GarrettBlackmon](https://twitter.com/garrettblackmon) – garrett@blackmon.dev
 
-Distributed under the GPL license. See ``LICENSE`` for more information.
+Distributed under the GPL license.
