@@ -13,7 +13,7 @@ This is achieved by spoofing the useragent to make your connection appear to com
 
 ## Installation
 
-Grab the approprite binary for your system from the [releases](https://github.com/GarrettBlackmon/youtube-cast-receiver/releases/) page.
+Grab the appropriate binary for your system from the [releases](https://github.com/GarrettBlackmon/youtube-cast-receiver/releases/) page.
 
 ## Linking your device
 
