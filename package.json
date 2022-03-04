@@ -1,6 +1,6 @@
 {
  "name": "youtube-cast-receiver",
- "version": "1.0.0",
+ "version": "1.0.1",
  "author": "Garrett Blackmon <garrett@blackmon.dev>",
  "description": "Grants access to youtube.com/tv normally reserved for use with smart TVs",
  "main": "main.js",
