@@ -23,7 +23,8 @@
   "files": [
    "main.js",
    "package.json",
-   "build/icon.png"
+   "build/icon.png",
+   "assets/tray/**"
   ],
   "mac": {
    "category": "public.app-category.entertainment",
