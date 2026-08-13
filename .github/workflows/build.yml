@@ -28,10 +28,11 @@ jobs:
         with:
           node-version: 22
 
-      # electron-builder shells out to rpmbuild for the .rpm target
+      # electron-builder shells out to rpmbuild for the .rpm target, and to
+      # bsdtar (libarchive-tools) to write the .MTREE in the pacman package.
       - name: Install Linux packaging tools
         if: matrix.os == 'ubuntu-latest'
-        run: sudo apt-get update && sudo apt-get install -y rpm
+        run: sudo apt-get update && sudo apt-get install -y rpm libarchive-tools
 
       - name: Install dependencies
         run: npm install
