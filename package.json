@@ -1,44 +1,75 @@
 {
  "name": "youtube-cast-receiver",
- "version": "1.0.1",
+ "version": "1.0.2",
  "author": "Garrett Blackmon <garrett@blackmon.dev>",
  "description": "Grants access to youtube.com/tv normally reserved for use with smart TVs",
  "main": "main.js",
+ "desktopName": "youtube-cast-receiver.desktop",
  "scripts": {
-  "start": "electron-forge start",
-  "postinstall": "electron-builder install-app-deps",
+  "start": "electron .",
   "build-local": "electron-builder --mac --windows --linux",
   "release": "electron-builder --mac --windows --linux --publish always"
  },
  "keywords": [],
  "license": "ISC",
  "devDependencies": {
-  "electron-builder": "21.2.0",
-  "@electron-forge/cli": "^6.0.0-beta.54",
-  "@electron-forge/maker-deb": "^6.0.0-beta.54",
-  "@electron-forge/maker-dmg": "^6.0.0-beta.61",
-  "@electron-forge/maker-rpm": "^6.0.0-beta.54",
-  "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
-  "@electron-forge/maker-zip": "^6.0.0-beta.54",
-  "electron": "^12.0.2"
- },
- "dependencies": {
-  "electron-squirrel-startup": "^1.0.0"
+  "electron": "^43.4.0",
+  "electron-builder": "^26.15.3"
  },
  "build": {
   "appId": "com.garrettblackmon.ycr",
   "productName": "Youtube Cast Receiver",
+  "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+  "files": [
+   "main.js",
+   "package.json",
+   "build/icon.png"
+  ],
   "mac": {
-   "category": "public.app-category.entertainment"
+   "category": "public.app-category.entertainment",
+   "icon": "assets/icon.icns",
+   "target": [
+    {
+     "target": "dmg",
+     "arch": [
+      "x64",
+      "arm64"
+     ]
+    }
+   ]
   },
-  "dmg": {
-   "icon": "assets/icon.icns"
+  "win": {
+   "target": [
+    "nsis",
+    "portable"
+   ]
   },
   "linux": {
    "target": [
-    "deb"
+    "AppImage",
+    "deb",
+    "rpm",
+    "pacman"
    ],
-   "category": "Video"
+   "icon": "build/icon.png",
+   "category": "Video",
+   "maintainer": "Garrett Blackmon <garrett@blackmon.dev>",
+   "synopsis": "Cast Youtube videos to any computer, no chromecast needed",
+   "syncDesktopName": true
+  },
+  "pacman": {
+   "depends": [
+    "gtk3",
+    "nss",
+    "alsa-lib",
+    "libxtst",
+    "libxss",
+    "libcups",
+    "libnotify",
+    "libxkbcommon",
+    "at-spi2-core",
+    "xdg-utils"
+   ]
   }
  }
 }
