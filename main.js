@@ -2,6 +2,8 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path');
 const iconPath = path.join(__dirname, "build", "icon.png");
 
+let win = null;
+
 function createWindow () {
     win = new BrowserWindow(
       {
@@ -9,7 +11,7 @@ function createWindow () {
         icon: iconPath,
         autoHideMenuBar: true
       });
-    win.loadURL('http://youtube.com/tv',
+    win.loadURL('https://youtube.com/tv',
       {userAgent: 'Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)'});
  
     win.on('closed', () => {

@@ -38,6 +38,7 @@
 node_modules/
 SHASUMS256.txt
 **/package-lock.json
+bun.lock
 compile_commands.json
 .envrc
 

@@ -15,6 +15,17 @@ This is achieved by spoofing the useragent to make your connection appear to com
 
 Grab the appropriate binary for your system from the [releases](https://github.com/GarrettBlackmon/youtube-cast-receiver/releases/) page.
 
+On Linux there are a few options. The AppImage is the one to grab if you're not sure - it runs anywhere, no install needed:
+
+```sh
+chmod +x youtube-cast-receiver-*.AppImage
+./youtube-cast-receiver-*.AppImage
+```
+
+AppImages need FUSE 2. Most distros still ship it, but if you get a `libfuse.so.2` error either install it (`fuse2` on Arch, `libfuse2` on Debian/Ubuntu) or just run the file with `--appimage-extract-and-run`.
+
+If you'd rather have it show up in your app menu like a normal program, there's a `.deb`, an `.rpm`, and a `.pacman` for Arch (`sudo pacman -U youtube-cast-receiver-*.pacman`).
+
 ## Linking your device
 
 ### 1: Open the application and click the settings icon
@@ -63,6 +74,8 @@ Grab the appropriate binary for your system from the [releases](https://github.c
     * Official release - compiled for Windows/MacOS/Linux
 * 1.0.1
     * Bugfix - removed menubar on windows distribution
+* 1.0.2
+    * Electron 12 -> 43, fixed the build pipeline, added AppImage/rpm/pacman builds for Linux
 
 
 
@@ -85,11 +98,13 @@ npm i
 npm run start
 ```
 
-To build:
+To build for your own platform:
 
 ```sh
-npm run make
+npx electron-builder --linux    # or --mac / --windows
 ```
+
+Builds land in `dist/`. `npm run build-local` does all three at once, but cross-building mac and windows off their own OS needs extra tooling, so CI handles that.
 
 ## Meta
 
