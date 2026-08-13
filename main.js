@@ -10,7 +10,7 @@ function createWindow () {
         autoHideMenuBar: true
       });
     win.loadURL('http://youtube.com/tv',
-      {userAgent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36; Youtube ; Tizen 4.0'});
+      {userAgent: 'Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)'});
  
     win.on('closed', () => {
       win = null
