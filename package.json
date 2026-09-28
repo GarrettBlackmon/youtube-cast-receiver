@@ -1,6 +1,6 @@
 {
  "name": "youtube-cast-receiver",
- "version": "1.0.2",
+ "version": "1.0.3",
  "author": "Garrett Blackmon <garrett@blackmon.dev>",
  "description": "Grants access to youtube.com/tv normally reserved for use with smart TVs",
  "main": "main.js",
@@ -19,11 +19,15 @@
  "build": {
   "appId": "com.garrettblackmon.ycr",
   "productName": "Youtube Cast Receiver",
+  "toolsets": {
+   "appimage": "1.0.3"
+  },
   "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
   "files": [
    "main.js",
    "package.json",
-   "build/icon.png"
+   "build/icon.png",
+   "renderer/**"
   ],
   "mac": {
    "category": "public.app-category.entertainment",
@@ -59,6 +63,9 @@
    "maintainer": "Garrett Blackmon <garrett@blackmon.dev>",
    "synopsis": "Cast Youtube videos to any computer, no chromecast needed",
    "syncDesktopName": true
+  },
+  "appImage": {
+   "artifactName": "${name}-${version}-${arch}.${ext}"
   },
   "pacman": {
    "depends": [

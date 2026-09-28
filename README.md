@@ -22,7 +22,7 @@ chmod +x youtube-cast-receiver-*.AppImage
 ./youtube-cast-receiver-*.AppImage
 ```
 
-AppImages need FUSE 2. Most distros still ship it, but if you get a `libfuse.so.2` error either install it (`fuse2` on Arch, `libfuse2` on Debian/Ubuntu) or just run the file with `--appimage-extract-and-run`.
+No `libfuse2` needed anymore. The AppImage is built on the static runtime, which links FUSE in and only shells out to the `fusermount` helper that ships with every distro's fuse package. If it still complains, `--appimage-extract-and-run` always works.
 
 If you'd rather have it show up in your app menu like a normal program, there's a `.deb`, an `.rpm`, and a `.pacman` for Arch (`sudo pacman -U youtube-cast-receiver-*.pacman`).
 
@@ -76,6 +76,8 @@ If you'd rather have it show up in your app menu like a normal program, there's 
     * Bugfix - removed menubar on windows distribution
 * 1.0.2
     * Electron 12 -> 43, fixed the build pipeline, added AppImage/rpm/pacman builds for Linux
+* 1.0.3
+    * Shows a start screen instead of a blank window when there's no connection, static AppImage runtime (no libfuse2), dropped 'linux' from the AppImage file name
 
 
 

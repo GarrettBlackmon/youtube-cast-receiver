@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>Youtube Cast Receiver</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    font: 16px/1.55 "Segoe UI", Cantarell, "Noto Sans", DejaVu Sans, sans-serif;
+    color: #f3f0ef;
+    /* the gradients also keep the window from being a single flat colour */
+    background:
+      radial-gradient(900px 620px at 22% 14%, #3d1d24 0%, rgba(61, 29, 36, 0) 62%),
+      radial-gradient(760px 560px at 84% 88%, #1e2b46 0%, rgba(30, 43, 70, 0) 58%),
+      linear-gradient(160deg, #15171c 0%, #1b1d24 46%, #23181d 100%);
+    -webkit-user-select: none;
+    cursor: default;
+    overflow: hidden;
+  }
+  main { width: 100%; max-width: 760px; text-align: center; }
+  img.logo { width: 108px; height: 108px; margin-bottom: 20px; }
+  h1 { margin: 0 0 6px; font-size: 40px; font-weight: 600; letter-spacing: 0.2px; }
+  p.tagline { margin: 0 0 34px; font-size: 19px; color: #bdb6b4; }
+  h2 { margin: 0 0 10px; font-size: 27px; font-weight: 600; color: #ff8a80; }
+  p.detail { margin: 0 auto 30px; max-width: 560px; font-size: 18px; color: #d8d2d0; }
+  a.reload {
+    display: inline-block;
+    padding: 13px 40px;
+    border-radius: 999px;
+    background: #cc2b31;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  section.steps {
+    margin: 42px auto 0;
+    max-width: 620px;
+    padding: 24px 30px;
+    border: 1px solid #443c40;
+    border-radius: 14px;
+    background: rgba(12, 13, 17, 0.55);
+    text-align: left;
+  }
+  section.steps h3 { margin: 0 0 14px; font-size: 20px; font-weight: 600; color: #ffd7a8; }
+  ol { margin: 0; padding-left: 24px; font-size: 17px; color: #ddd7d5; }
+  li { margin-bottom: 9px; }
+  li:last-child { margin-bottom: 0; }
+  footer { margin-top: 34px; font-size: 15px; color: #8d8785; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="../build/icon.png" alt="Youtube Cast Receiver">
+  <h1>Youtube Cast Receiver</h1>
+  <p class="tagline">Watch YouTube on this computer, picked from your phone</p>
+
+  <div id="offline">
+    <h2>Waiting for a connection</h2>
+    <p class="detail">This computer is offline right now. Once it is back on the
+      network, choose Reload and the YouTube TV interface opens here in fullscreen.</p>
+    <a class="reload" href="https://youtube.com/tv">Reload</a>
+  </div>
+
+  <div id="starting" class="hidden">
+    <h2>Opening youtube.com/tv</h2>
+    <p class="detail">Hold on a moment while the TV interface loads.</p>
+  </div>
+
+  <section class="steps">
+    <h3>Cast from your phone</h3>
+    <ol>
+      <li>Open the YouTube app on your phone.</li>
+      <li>Tap your profile picture, then Settings, then Watch on TV.</li>
+      <li>Pick Enter TV code and type the code shown on this screen.</li>
+    </ol>
+  </section>
+
+  <footer>Youtube Cast Receiver &middot; no Chromecast needed</footer>
+</main>
+<script>
+  // the offline text is the default so it still shows with scripting turned off
+  if (!new URLSearchParams(location.search).has('offline')) {
+    document.getElementById('offline').classList.add('hidden');
+    document.getElementById('starting').classList.remove('hidden');
+  }
+</script>
+</body>
+</html>
